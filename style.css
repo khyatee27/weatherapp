@@ -63,7 +63,7 @@ body{
 .icons{
     display: inline-block;
     background-color: aqua;
-    
+     opacity: 0.7;
     height: 200px;
     width: 190px;
     

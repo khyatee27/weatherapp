@@ -36,16 +36,22 @@ function loaddata(){
             //check for time
             let fetch_time=data.list[i].dt_txt;
             //console.log(fetch_time)
-            let time=fetch_time.split(" ")
-            
-            if(time[1]=="09:00:00") //fetch data for each morning 9 am
+           let time=fetch_time.split(" ")
+            if (count_min==0){  //for current day fetch 1st time available as 9 am wont be always available
+              document.getElementById("day"+(count_min+1)+"min").innerHTML="Temp:"+Number(data.list[i].main.temp).toFixed(1)+"°";
+              document.getElementById("day"+(count_min+1)+"max").innerHTML="Real Feel:"+Number(data.list[i].main.feels_like).toFixed(1)+"°";
+              count_min+=1;
+            }
+            else{  //fetch data for each morning 9 am for day2 onwards
+
+            if(time[1]=="09:00:00") 
             {
               //console.log(time[1])
               document.getElementById("day"+(count_min+1)+"min").innerHTML="Temp:"+Number(data.list[i].main.temp).toFixed(1)+"°";
               document.getElementById("day"+(count_min+1)+"max").innerHTML="Real Feel:"+Number(data.list[i].main.feels_like).toFixed(1)+"°";
               count_min+=1; //set counter 1 for each day total 5
             }
-          } 
+          }
           //icons
           for(i=0;i<5;i++){
             document.getElementById("img"+(i+1)).src=" https://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+"@2x"+".png";

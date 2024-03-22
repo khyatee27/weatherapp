@@ -52,6 +52,7 @@ function loaddata(){
               count_min+=1; //set counter 1 for each day total 5
             }
           }
+          }
           //icons
           for(i=0;i<5;i++){
             document.getElementById("img"+(i+1)).src=" https://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+"@2x"+".png";
@@ -71,13 +72,7 @@ function loaddata(){
         //https://api.unsplash.com/photos/random?client_id=EKup6KqOIyS-2j3VZ-O9OQt8l6l0mDsKXztXrcvUVdM*/
         .catch(err => alert("Error"))
 }
-const main=document.getElementsByClassName("footer")
-main.addEventListener("load",getcity_onload());
-function getcity_onload()
-{
-  document.querySelector("input").value="Enter City name here";
-  
-}
+
 
 
 

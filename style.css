@@ -13,6 +13,9 @@
 
 body{
     background:url('https://source.unsplash.com/orange-and-gray-clouds-during-sunset-ZVhm6rEKEX8');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
 }
 #container{
     display: flex;
